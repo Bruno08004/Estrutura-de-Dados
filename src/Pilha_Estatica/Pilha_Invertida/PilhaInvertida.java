@@ -1,7 +1,5 @@
 package Pilha_Estatica.Pilha_Invertida;
 
-import Pilha_Estatica.Pilha.Empilhavel;
-
 public class PilhaInvertida implements Empilhavel {
 
     private Object[] dados;
