@@ -1,4 +1,4 @@
-package Pilha.Pilha_Estatica.Pilha;
+package Pilha_Estatica.Pilha;
 
 public interface Empilhavel {
     //operações principais

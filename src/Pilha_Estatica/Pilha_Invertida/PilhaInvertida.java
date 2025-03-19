@@ -1,6 +1,6 @@
-package Pilha.Pilha_Estatica.Pilha_Invertida;
+package Pilha_Estatica.Pilha_Invertida;
 
-import Pilha.Pilha_Estatica.Pilha.Empilhavel;
+import Pilha_Estatica.Pilha.Empilhavel;
 
 public class PilhaInvertida implements Empilhavel {
 
