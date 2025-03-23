@@ -1,13 +1,11 @@
 package Pilha_Estatica.Pilha;
 
+
 public class PilhaEstatica implements Empilhavel {
 
         //variáveis de instância
         private Object[] dados;
         private int ponteiroTopo;
-
-        //métodos
-
 
         //construtores
         public PilhaEstatica() {
@@ -19,7 +17,7 @@ public class PilhaEstatica implements Empilhavel {
             ponteiroTopo = -1;
         }
 
-        //métodos principais@
+        //métodos principais
         @Override
         public void empilhar(Object dado) {
             if (!estaCheia()) {
@@ -35,8 +33,8 @@ public class PilhaEstatica implements Empilhavel {
             Object aux = null;
             if (!estaVazia()) {
                 aux = dados[ponteiroTopo];
-                ponteiroTopo--;
                 dados[ponteiroTopo] = null;
+                ponteiroTopo--;
             } else {
                 System.err.println("Stack is empty!");
             }
@@ -76,7 +74,7 @@ public class PilhaEstatica implements Empilhavel {
 
         @Override
         public String imprimir() {
-            String aux = "´[";
+            String aux = "[";
             for (int i = ponteiroTopo; i >= 0; i--) {
                 if (i == 0)
                     aux += dados[i];

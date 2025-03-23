@@ -3,7 +3,7 @@ package Pilha_Estatica.Pilha_Invertida;
 
 public class PilhaInvertidaPrincipal {
     public static void main(String[] args) {
-        Empilhavel pilha = new PilhaInvertida(30);
+        EmpilhavelInvertida pilha = new PilhaInvertida(30);
 
         pilha.empilhar("Instituto");
         pilha.empilhar("Federal");
