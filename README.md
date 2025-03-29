@@ -35,13 +35,11 @@ Este repositório foi criado para acompanhar a trilha de aprendizado da discipli
 Este repositório apresenta implementações nas seguintes linguagens:
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50" alt="Python" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" height="50" alt="Java" />
 </div>
 
-- **Python**
 - **Java**
-
+  
 ---
 
 ## 👉 Acesse o Repositório
