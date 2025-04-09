@@ -1,4 +1,4 @@
-package Pilha_Estatica.Pilha_Dupla;
+package Unidade_01.Pilha_Estatica.Pilha_Dupla;
 
 public interface EmpilhavelDupla {
 

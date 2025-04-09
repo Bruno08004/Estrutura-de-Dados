@@ -1,7 +1,7 @@
-package Pilha_Estatica.Pilha_Invertida;
+package Unidade_01.Pilha_Estatica.Pilha;
 
-public interface EmpilhavelInvertida {
 
+public interface Empilhavel {
     //operações principais
     void empilhar(Object dado); //push
     Object desempilhar(); //pop

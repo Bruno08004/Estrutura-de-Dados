@@ -1,23 +1,19 @@
-package Fila_Estatica.Fila_Circular;
+package Unidade_01.Fila_Estatica.Fila;
 
-import Fila_Estatica.Fila.Enfileravel;
-
-public class FilaEstaticaCircular implements Enfileravel {
+public class FilaEstatica implements Enfileravel {
 
     private Object[] dados;
     private int ponteiroInicio; //cabeça = head
     private int ponteiroFim; //cauda = tail
-    private int quantidade;
 
-    public FilaEstaticaCircular() {
+    public FilaEstatica() {
         this(10);
     }
 
-    public FilaEstaticaCircular(int tamanho) {
+    public FilaEstatica(int tamanho) {
         this.dados = new Object[tamanho];
         this.ponteiroInicio = 0;
         this.ponteiroFim = -1;
-        this.quantidade = 0;
     }
 
     @Override
@@ -40,10 +36,9 @@ public class FilaEstaticaCircular implements Enfileravel {
 
     @Override
     public void enfileirar(Object dado) {
-        if (!estaCheia()) {
-            ponteiroFim = (ponteiroFim + 1) % dados.length; //Mesma condição realizada no método desenfileirar()
+        if (!estaCheia()){
+            ponteiroFim++;
             dados[ponteiroFim] = dado;
-            quantidade++;
         } else {
             System.err.println("Queue is empty!");
         }
@@ -55,13 +50,8 @@ public class FilaEstaticaCircular implements Enfileravel {
         Object aux = null;
         if (!estaVazia()) {
             aux = dados[ponteiroInicio];
-            ponteiroInicio = (ponteiroInicio + 1) % dados.length; //Forma para garantir a condição de que o ponteiroInicio seja diferente do tamanho da fila e funcionar de forma circular
-            /*
-            if (ponteiro == dados.length)  ----> Forma menos usual
-               ponteiroInicio == 0
-             */
-            quantidade--;
-        } else {
+            ponteiroInicio++;
+        }else{
             System.err.println("Queue is empty!");
         }
 
@@ -81,28 +71,23 @@ public class FilaEstaticaCircular implements Enfileravel {
 
     @Override
     public boolean estaCheia() {
-        return (quantidade == dados.length);
+        return (ponteiroFim == dados.length - 1);
     }
 
     @Override
     public boolean estaVazia() {
-        return (quantidade == 0);
+        return (ponteiroFim == ponteiroInicio - 1);
     }
 
     @Override
     public String imprimir() {
         String retorno = "[";
 
-        for (int i = ponteiroInicio; i < quantidade + ponteiroInicio; i++) {
-          /*
-           if (i == dados.length){ ---> Forma menos usual para o cenário, mas serve da mesma forma.
-                i = 0;
-            }
-            */
-            if (i == quantidade + ponteiroInicio - 1) {
-                retorno += dados[i % dados.length];
+        for (int i = ponteiroInicio; i <= ponteiroFim; i++) {
+            if (i == ponteiroFim) {
+                retorno += dados[i];
             } else {
-                retorno += dados[i % dados.length] + ",";
+                retorno += dados[i] + ",";
             }
         }
 

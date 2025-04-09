@@ -1,4 +1,4 @@
-package Pilha_Estatica.Pilha;
+package Unidade_01.Pilha_Estatica.Pilha;
 
 
 public class PilhaEstatica implements Empilhavel {
@@ -17,6 +17,7 @@ public class PilhaEstatica implements Empilhavel {
             ponteiroTopo = -1;
         }
 
+
         //métodos principais
         @Override
         public void empilhar(Object dado) {
@@ -33,7 +34,7 @@ public class PilhaEstatica implements Empilhavel {
             Object aux = null;
             if (!estaVazia()) {
                 aux = dados[ponteiroTopo];
-                dados[ponteiroTopo] = null;
+                //dados[ponteiroTopo] = null; Opcional, caso desejamos anular o dado desempilhado.
                 ponteiroTopo--;
             } else {
                 System.err.println("Stack is empty!");

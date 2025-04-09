@@ -1,4 +1,4 @@
-package Fila_Estatica.Fila_Circular_Dupla;
+package Unidade_01.Fila_Estatica.Fila_Circular_Dupla;
 
 public interface DuplamenteEnfileiravel {
     void enfileirarInicio(Object dado);

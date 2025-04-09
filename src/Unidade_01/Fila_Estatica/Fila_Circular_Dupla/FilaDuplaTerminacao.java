@@ -1,4 +1,4 @@
-package Fila_Estatica.Fila_Circular_Dupla;
+package Unidade_01.Fila_Estatica.Fila_Circular_Dupla;
 
 //Implementação de DeQueue - Double Ended Queue
 
@@ -47,7 +47,7 @@ public class FilaDuplaTerminacao implements DuplamenteEnfileiravel {
         Object aux = null;
         if (!estaVazia()) {
             aux = dados[ponteiroInicio];
-            ponteiroInicio = (ponteiroInicio + 1) % dados.length;
+            ponteiroInicio = avancar(ponteiroInicio);
             quantidade--;
         } else {
             System.err.println("Queue is empty!");
@@ -60,7 +60,7 @@ public class FilaDuplaTerminacao implements DuplamenteEnfileiravel {
         Object aux = null;
         if (!estaVazia()) {
             aux = dados[ponteiroFim];
-            ponteiroFim = (ponteiroFim - 1 + dados.length) % dados.length; // Corrigido
+            ponteiroFim = retroceder(ponteiroFim);
             quantidade--;
         } else {
             System.err.println("Queue is empty!");
@@ -71,7 +71,7 @@ public class FilaDuplaTerminacao implements DuplamenteEnfileiravel {
     @Override
     public void enfileirarInicio(Object dado) {
         if (!estaCheia()) {
-            ponteiroInicio = (ponteiroInicio - 1 + dados.length) % dados.length; // Corrigido
+            ponteiroInicio = retroceder(ponteiroInicio);
             dados[ponteiroInicio] = dado;
             quantidade++;
         } else {
@@ -82,11 +82,11 @@ public class FilaDuplaTerminacao implements DuplamenteEnfileiravel {
     @Override
     public void enfileirarFim(Object dado) {
         if (!estaCheia()) {
-            ponteiroFim = (ponteiroFim + 1) % dados.length;
+            ponteiroFim = avancar(ponteiroFim); //Mesma condição realizada no método desenfileirar()
             dados[ponteiroFim] = dado;
             quantidade++;
         } else {
-            System.err.println("Queue is empty!");
+            System.err.println("Queue is full!");
         }
 
     }
@@ -122,12 +122,15 @@ public class FilaDuplaTerminacao implements DuplamenteEnfileiravel {
     @Override
     public String imprimirFrenteTras() {
         String retorno = "[";
+        int ponteiroAux = ponteiroInicio;
 
-        for (int i = ponteiroInicio; i < quantidade + ponteiroInicio; i++) {
-            if (i == quantidade + ponteiroInicio - 1) {
-                retorno += dados[i % dados.length];
+        for (int i = 0; i < quantidade; i++) {
+            if (i == quantidade - 1) {
+                retorno += dados[ponteiroAux];
             } else {
-                retorno += dados[i % dados.length] + ",";
+                retorno += dados[ponteiroAux] + ",";
+
+                ponteiroAux = avancar(ponteiroAux);
             }
         }
 
@@ -137,21 +140,27 @@ public class FilaDuplaTerminacao implements DuplamenteEnfileiravel {
     @Override
     public String imprimirTrasFrente() {
         String retorno = "[";
+        int ponteiroAux = ponteiroFim;
 
-        int i = ponteiroFim;
-        for (int count = 0; count < quantidade; count++) {
-            retorno += dados[i];  // Adiciona o elemento atual
+        for (int i = 0; i < quantidade; i++) {
+            if (i == quantidade - 1) {
+                retorno += dados[ponteiroAux];
+            } else {
+                retorno += dados[ponteiroAux] + ",";
 
-            if (count < quantidade - 1) {
-                retorno += ","; // Adiciona vírgula entre os elementos
+                ponteiroAux = retroceder(ponteiroAux);
             }
-
-            i = (i - 1 + dados.length) % dados.length; // Decremento circular
         }
 
         return retorno + "]";
     }
 
+    public int avancar(int ponteiro) {
+        return (ponteiro + 1) % dados.length;
+    }
 
+    public int retroceder(int ponteiro){
+        return ((ponteiro - 1)+ dados.length) % dados.length;
+    }
 
 }
