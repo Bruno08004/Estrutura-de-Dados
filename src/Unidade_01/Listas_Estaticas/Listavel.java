@@ -24,7 +24,7 @@ public interface Listavel {
     boolean contem(Object dado); //R
 
 
-    int primeiraOcorrencia(Object dado);
+    //int primeiraOcorrencia(Object dado);
 
 
     boolean estaCheia();

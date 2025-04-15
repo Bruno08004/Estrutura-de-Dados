@@ -132,15 +132,15 @@ public class ListaEstaticaCircular implements Listavel {
         return false;
     }
 
-    @Override
-    public int primeiraOcorrencia(Object dado) {
-        if (!estaVazia()) {
-            for (int i = 0; i < quantidade; i++) {
-
-            }
-        }
-
-    }
+//    @Override
+//    public int primeiraOcorrencia(Object dado) {
+//        if (!estaVazia()) {
+//            for (int i = 0; i < quantidade; i++) {
+//
+//            }
+//        }
+//
+//    }
 
     @Override
     public boolean estaCheia() {
