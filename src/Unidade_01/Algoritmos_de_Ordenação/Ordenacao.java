@@ -57,6 +57,8 @@ public class Ordenacao {
         Ordenacao sort = new Ordenacao();
         sort.imprimirTela();
         sort.insertionSort();
+        //sort.boubleSort();
+        //sort.selectionSort();
         System.out.println("Depois...");
         sort.imprimirTela();
     }
