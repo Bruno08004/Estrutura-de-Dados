@@ -13,5 +13,6 @@ public class FilaComPilhaPrincipal {
         System.out.println(filaPilha.imprimir());
         filaPilha.atualizarFim("D");
         System.out.println(filaPilha.imprimir());
+        System.out.println(filaPilha.frente());
     }
 }
