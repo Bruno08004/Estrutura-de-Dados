@@ -23,16 +23,16 @@ public class ListaEstaticaCircular implements Listavel {
         if (!estaCheia()){
             if (posicao >= 0 && posicao <= quantidade){
                 int posicaoFisica = mapeamento(posicao);
-                int x = ponteiroFim;
-                int y = avancar(x);
+                int origem = ponteiroFim;
+                int destino = avancar(origem);
                 for ( int i = 0; i< quantidade - posicao; i++){
-                    dados[x] = dados[y];
-                    x = retroceder(x);
-                    y = retroceder(y);
+                    dados[destino] = dados[origem];
+                    origem = retroceder(origem);
+                    destino = retroceder(destino);
                 }
                 dados[posicaoFisica] = dado;
                 quantidade++;
-                avancar(ponteiroFim);
+                ponteiroFim = avancar(ponteiroFim);
             }
         }
     }
@@ -71,7 +71,7 @@ public class ListaEstaticaCircular implements Listavel {
             dadosAux = new Object[quantidade];
             int ponteiroAux = ponteiroInicio;
             for (int i = 0; i < quantidade; i++) {
-                dadosAux[i] = dados[ponteiroInicio];
+                dadosAux[i] = dados[ponteiroAux];
                 ponteiroAux = avancar(ponteiroAux);
             }
         } else {
@@ -129,18 +129,32 @@ public class ListaEstaticaCircular implements Listavel {
 
     @Override
     public boolean contem(Object dado) {
+        if (!estaVazia()) {
+            int ponteiroAux = ponteiroInicio;
+            for (int i = 0; i < quantidade; i++) {
+                if (dados[ponteiroAux] != null && dados[ponteiroAux].equals(dado)) {
+                    return true;
+                }
+                ponteiroAux = avancar(ponteiroAux);
+            }
+        }
         return false;
     }
 
-//    @Override
-//    public int primeiraOcorrencia(Object dado) {
-//        if (!estaVazia()) {
-//            for (int i = 0; i < quantidade; i++) {
-//
-//            }
-//        }
-//
-//    }
+    @Override
+    public int primeiraOcorrencia(Object dado) {
+        if (!estaVazia()) {
+            int ponteiroAux = ponteiroInicio;
+            for (int i = 0; i < quantidade; i++) {
+                if (dados[ponteiroAux] != null && dados[ponteiroAux].equals(dado)) {
+                    return i; // posição lógica
+                }
+                ponteiroAux = avancar(ponteiroAux);
+            }
+        }
+        return -1;
+    }
+
 
     @Override
     public boolean estaCheia() {
@@ -164,7 +178,6 @@ public class ListaEstaticaCircular implements Listavel {
                 retorno += dados[ponteiroAux];
             } else {
                 retorno += dados[ponteiroAux] + ",";
-
                 ponteiroAux = avancar(ponteiroAux);
             }
         }
