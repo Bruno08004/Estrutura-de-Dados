@@ -29,7 +29,7 @@ public class PilhaInvertida implements EmpilhavelInvertida {
         Object aux = null;
         if (!estaVazia()) {
             aux = dados[ponteiroTopo];
-            dados[ponteiroTopo] = null;
+           // dados[ponteiroTopo] = null;
             ponteiroTopo++;
         } else {
             System.err.println("Stack is empty!");

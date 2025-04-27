@@ -7,6 +7,7 @@ public class PilhaEstaticaPrincipal {
 
         p2.empilhar("Instituto");
         p2.empilhar("Federal");
+        System.out.println("Pilha=" + p2.imprimir());
         System.out.println("Espiar:" + p2.espiar());
         p2.empilhar("Educação");
         p2.empilhar("de");
@@ -20,7 +21,7 @@ public class PilhaEstaticaPrincipal {
         p2.empilhar("Bahia");
         p2.empilhar(p2.desempilhar());
         p2.empilhar(conteudo);
-        System.out.println("Pilha="+p2.imprimir());
+        System.out.println("Pilha=" + p2.imprimir());
 
     }
 

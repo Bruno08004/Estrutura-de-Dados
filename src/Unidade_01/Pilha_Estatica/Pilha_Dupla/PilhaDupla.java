@@ -42,7 +42,7 @@ public class PilhaDupla implements EmpilhavelDupla{
         Object aux = null;
         if (!estaVazia1()) {
             aux = dados[ponteiroTopo1];
-            dados[ponteiroTopo1] = null;
+            //dados[ponteiroTopo1] = null; Opcional
             ponteiroTopo1--;
         } else {
             System.err.println("Stack is empty!");
@@ -55,7 +55,7 @@ public class PilhaDupla implements EmpilhavelDupla{
         Object aux = null;
         if (!estaVazia2()) {
             aux = dados[ponteiroTopo2];
-            dados[ponteiroTopo2] = null;
+            //dados[ponteiroTopo2] = null; Opcional
             ponteiroTopo2++;
         } else {
             System.err.println("Stack is empty!");
@@ -111,7 +111,7 @@ public class PilhaDupla implements EmpilhavelDupla{
 
     @Override
     public boolean estaCheia2() {
-        return (ponteiroTopo2 == ponteiroTopo1 + 1);
+        return estaCheia1();
     }
 
     @Override

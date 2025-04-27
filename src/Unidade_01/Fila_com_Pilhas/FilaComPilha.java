@@ -94,7 +94,7 @@ public class FilaComPilha implements Enfileravel {
             p2.empilhar(p1.desempilhar());
         }
         while (!p2.estaVazia()) {
-            retorno += p2.espiar() + ",";
+            retorno += p2.espiar() + " ";
             p1.empilhar(p2.desempilhar());
         }
         return retorno + "]";
