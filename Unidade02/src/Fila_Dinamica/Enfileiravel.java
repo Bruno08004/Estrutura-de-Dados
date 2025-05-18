@@ -1,4 +1,4 @@
-package Unidade_02.Java.Fila_Dinamica;
+package src.Fila_Dinamica;
 
 public interface Enfileiravel<T> {
     void enfileirarInicio(T dado);

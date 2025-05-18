@@ -18,7 +18,7 @@ out/
 .settings
 .springBeans
 .sts4-cache
-Unidade02/Unidade_02/Java/Fila_Dinamica/bin/
+Unidade02/src/Fila_Dinamica/bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 

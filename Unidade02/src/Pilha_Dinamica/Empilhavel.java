@@ -1,4 +1,4 @@
-package Unidade_02.Java.Pilha_Dinamica;
+package src.Pilha_Dinamica;
 
 public interface Empilhavel<T> {
     void empilhar(T dado);
