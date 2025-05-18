@@ -108,7 +108,7 @@ public class ListaEstaticaCircular implements Listavel {
                     x= avancar(x);
                     y = avancar(y);
                 }
-                quantidade --;
+                quantidade--;
                 ponteiroFim = retroceder(ponteiroFim);
             } else{
                 System.err.println("Invalid Index!");

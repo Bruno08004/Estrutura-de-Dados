@@ -15,7 +15,7 @@ public class ListaEstaticaPrincipal {
         System.out.println(lista.imprimir());
         lista.apagar(0);
         System.out.println(lista.imprimir());
-        lista.atualizar("E", 3);
+        lista.atualizar("E", 2);
         System.out.println(lista.imprimir());
         lista.anexar("B");
         System.out.println("Primeira ocorrência: "+lista.primeiraOcorrencia("B"));

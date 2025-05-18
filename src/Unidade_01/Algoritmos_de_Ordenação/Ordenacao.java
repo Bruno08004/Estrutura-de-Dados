@@ -13,10 +13,10 @@ public class Ordenacao {
     }
 
     public void boubleSort() {
-        for (int j = 0; j < dados.length - 1; j++) {
-            for (int i = 0; i < (dados.length - 1) - j; i++) {
-                if (dados[i] > dados[i + 1]) {
-                    troca(i, i + 1);
+        for (int i = 0; i < dados.length - 1; i++) {
+            for (int j = 0; j < (dados.length - 1) - i; j++) {
+                if (dados[j] > dados[j + 1]) {
+                    troca(j, j + 1);
                 }
             }
         }
