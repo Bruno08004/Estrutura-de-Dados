@@ -24,7 +24,6 @@ Este repositório foi criado para acompanhar a trilha de aprendizado da discipli
 
 ### Unidade 3
 - Árvores Binárias de Busca e Árvores AVL
-- Recesso Acadêmico
 - Árvores B e B+
 - Aplicações de Árvores
 
