@@ -7,10 +7,9 @@ package src.Pilha_Dinamica;
  * comportamento LIFO (Last-In, First-Out). Ou seja, o último elemento inserido é o primeiro a ser removido.</p>
  *
  * @param <T> o tipo de dado armazenado na pilha
- *
  * @author Bruno Campos Penha
- * @since 2025-05-19
  * @version 1.0
+ * @since 2025-05-19
  */
 public interface Empilhavel<T> {
 
