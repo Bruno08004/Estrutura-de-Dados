@@ -1,13 +1,11 @@
 package src.Lista_Dinamica;
 
-public class UnderflowException extends RuntimeException{
-    @Override
-    public UnderflowException(){
+public class UnderflowException extends RuntimeException {
+    public UnderflowException() {
         super();
     }
 
-    @Override
-    public UnderflowException(String msg){
+    public UnderflowException(String msg) {
         super(msg);
     }
 }
