@@ -55,6 +55,7 @@ public class PilhaDinamincaGenerica<T> implements Empilhavel<T> {
         NodoDuplo<T> novoNodo = new NodoDuplo<>();
         novoNodo.setDado(dado);
         novoNodo.setAnterior(ponteiroTopo);
+        novoNodo.setProximo(null);
 
         if (ponteiroTopo != null) {
             ponteiroTopo.setProximo(novoNodo);

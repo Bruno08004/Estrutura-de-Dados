@@ -137,7 +137,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
         NodoDuplo<T> aux = ponteiroInicio;
         for (int i = 0; i < quantidade; i++) {
             retorno += aux.getDado();
-            if (!)
         }
+         return retorno += "]";
     }
 }

@@ -44,7 +44,7 @@ public class ArvoreBinariaHeapMaximo<T> implements Amontoavel<T>{
         T dadoRaiz = dados[0];
         dados[0] = dados[ponteiroFim];
         ponteiroFim--;
-        ajustarAbaixo
+        return dadoRaiz;
     }
 
 
