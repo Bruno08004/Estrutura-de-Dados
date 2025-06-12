@@ -1,5 +1,7 @@
 package src.Lista_Dinamica;
 
+import src.exception.OverflowException;
+
 public class ListaDinamicaGenerica<T> implements Listavel<T> {
 
     private NodoDuplo<T> ponteiroInicio;

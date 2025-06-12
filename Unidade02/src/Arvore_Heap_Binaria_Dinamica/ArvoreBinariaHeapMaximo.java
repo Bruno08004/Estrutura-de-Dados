@@ -1,7 +1,7 @@
 package src.Arvore_Heap_Binaria_Dinamica;
 
-import src.Lista_Dinamica.OverflowException;
-import src.Lista_Dinamica.UnderflowException;
+import src.exception.OverflowException;
+import src.exception.UnderflowException;
 
 import java.util.NoSuchElementException;
 

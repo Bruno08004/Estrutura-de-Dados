@@ -1,4 +1,4 @@
-package src.Lista_Dinamica;
+package src.exception;
 
 public class OverflowException extends RuntimeException {
 
