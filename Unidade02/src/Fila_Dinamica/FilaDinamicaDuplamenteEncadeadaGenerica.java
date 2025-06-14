@@ -68,10 +68,10 @@ public class FilaDinamicaDuplamenteEncadeadaGenerica<T> implements Enfileiravel<
     }
 
     /**
-     * Remove e retorna o elemento do início da fila.
+     * Adiciona um novo elemento no fim da fila.
      *
-     * @return o dado removido do início da fila
-     * @throws UnderflowException se a fila estiver vazia
+     * @param dado o dado a ser enfileirado
+     * @throws OverflowException se a fila estiver cheia
      */
     @Override
     public void enfileirarFim(T dado) {

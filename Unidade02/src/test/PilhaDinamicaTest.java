@@ -5,12 +5,14 @@ import org.junit.Test;
 import src.Pilha_Dinamica.Empilhavel;
 import src.Pilha_Dinamica.PilhaDinamincaGenerica;
 
+import static org.junit.Assert.assertEquals;
+
 public class PilhaDinamicaTest {
     @Test
     public void testEmpilhar() {
         Empilhavel<String> pilha = new PilhaDinamincaGenerica<>(1);
         pilha.empilhar("dado");
-        Assert.assertEquals("dado", pilha.espiar());
+        assertEquals("dado", pilha.espiar());
     }
 
     @Test
@@ -19,7 +21,7 @@ public class PilhaDinamicaTest {
         pilha.empilhar("dado");
         pilha.empilhar("instituto");
         String conteudo = pilha.desempilhar();
-        Assert.assertEquals("instituto", conteudo);
+        assertEquals("instituto", conteudo);
     }
 
     @Test
@@ -27,7 +29,7 @@ public class PilhaDinamicaTest {
         Empilhavel<String> pilha = new PilhaDinamincaGenerica<>(2);
         pilha.empilhar("instituto");
         pilha.atualizar("federal");
-        Assert.assertEquals("federal", pilha.espiar());
+        assertEquals("federal", pilha.espiar());
     }
 
     @Test
@@ -35,7 +37,7 @@ public class PilhaDinamicaTest {
         Empilhavel<String> pilha = new PilhaDinamincaGenerica<>(2);
         pilha.empilhar("federal");
         pilha.empilhar("instituto");
-        Assert.assertEquals("instituto", pilha.espiar());
+        assertEquals("instituto", pilha.espiar());
     }
 
 
