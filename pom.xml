@@ -4,29 +4,29 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.bruno</groupId>
-    <artifactId>meu-projeto</artifactId>
+    <artifactId>Estrutura_de_Dados</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <!-- JUnit Jupiter API and Engine -->
+        <!-- JUnit 4 para testes -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.10.0</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
-            <!-- Plugin para rodar os testes com JUnit 5 -->
+            <!-- Plugin Maven Surefire para rodar os testes com JUnit 4 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

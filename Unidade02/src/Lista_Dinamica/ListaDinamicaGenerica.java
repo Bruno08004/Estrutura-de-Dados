@@ -119,7 +119,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
         if (estaVazia()) {
             throw new OverflowException("Lista Vazia!");
         }
-        T[] dados =(T[]) Array.newInstance(ponteiroInicio.getDado().getClass(), quantidade);
+        T[] dados = (T[]) Array.newInstance(ponteiroFim.getDado().getClass(), quantidade);
         NodoDuplo<T> ponteiroAuxiliar = ponteiroInicio;
         for (int i = 0; i < quantidade; i++) {
             dados[i] = ponteiroAuxiliar.getDado();
