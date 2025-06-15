@@ -1,11 +1,10 @@
 package src.test;
 
-import org.junit.Assert;
 import org.junit.Test;
 import src.Pilha_Dinamica.Empilhavel;
 import src.Pilha_Dinamica.PilhaDinamincaGenerica;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class PilhaDinamicaTest {
     @Test

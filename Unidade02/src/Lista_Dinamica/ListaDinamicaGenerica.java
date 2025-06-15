@@ -3,6 +3,8 @@ package src.Lista_Dinamica;
 import src.exception.OverflowException;
 import src.exception.UnderflowException;
 
+import java.lang.reflect.Array;
+
 /**
  * Classe que implementa uma lista dinâmica genérica com nós duplamente encadeados.
  * Permite operações de inserção, remoção, atualização e seleção de elementos.
@@ -71,8 +73,8 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
      */
     @Override
     public void inserir(int posicao, T dado) {
-        if (estaVazia()) {
-            throw new UnderflowException("Lista Vazia!");
+        if (estaCheia()) {
+            throw new OverflowException("Lista Vazia!");
         }
         if (posicao < 0 || posicao > quantidade) {
             throw new IndexOutOfBoundsException("Posicao Invalida!");
@@ -83,10 +85,9 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
         NodoDuplo<T> ponteiroAnterior = null;
         NodoDuplo<T> ponteiroProximo = ponteiroInicio;
 
-        NodoDuplo<T> ponteiroAuxiliar = ponteiroInicio;
         for (int i = 0; i < posicao; i++) {
             ponteiroAnterior = ponteiroProximo;
-            ponteiroAuxiliar = ponteiroAuxiliar.getProximo();
+            ponteiroProximo = ponteiroProximo.getProximo();
         }
 
         if (ponteiroAnterior != null) {
@@ -112,12 +113,13 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
      * @return Um array contendo todos os elementos da lista.
      * @throws UnderflowException Se a lista estiver vazia.
      */
+    @SuppressWarnings("unchecked")
     @Override
     public T[] selecionarTodos() {
         if (estaVazia()) {
             throw new OverflowException("Lista Vazia!");
         }
-        T[] dados = (T[]) new Object[quantidade];
+        T[] dados =(T[]) Array.newInstance(ponteiroInicio.getDado().getClass(), quantidade);
         NodoDuplo<T> ponteiroAuxiliar = ponteiroInicio;
         for (int i = 0; i < quantidade; i++) {
             dados[i] = ponteiroAuxiliar.getDado();
