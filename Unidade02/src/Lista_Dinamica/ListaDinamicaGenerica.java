@@ -117,7 +117,7 @@ public class ListaDinamicaGenerica<T> implements Listavel<T> {
     @Override
     public T[] selecionarTodos() {
         if (estaVazia()) {
-            throw new OverflowException("Lista Vazia!");
+            throw new UnderflowException("Lista Vazia!");
         }
         T[] dados = (T[]) Array.newInstance(ponteiroFim.getDado().getClass(), quantidade);
         NodoDuplo<T> ponteiroAuxiliar = ponteiroInicio;

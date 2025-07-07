@@ -249,7 +249,7 @@ public class FilaDinamicaDuplamenteEncadeadaGenerica<T> implements Enfileiravel<
                 aux += ",";
             }
 
-            ponteiroAux = ponteiroAux.getProximo();
+            ponteiroAux = ponteiroAux.getAnterior();
         }
         return aux + "]";
     }

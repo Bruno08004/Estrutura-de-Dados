@@ -151,8 +151,8 @@ public class PilhaDinamincaGenerica<T> implements Empilhavel<T> {
 
             if (i != quantidade - 1) {
                 aux += ",";
-                ponteiroAux = ponteiroAux.getAnterior();
             }
+            ponteiroAux = ponteiroAux.getAnterior();
         }
 
         return aux + "]";
