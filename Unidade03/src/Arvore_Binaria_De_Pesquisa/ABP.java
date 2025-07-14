@@ -1,14 +1,16 @@
 package Arvore_Binaria_De_Pesquisa;
 
 
-public class ABP<T extends Comparable<T>>implements Arborivel<T> {
+public class ABP<T extends Comparable<T>>implements Arborizavel<T> {
 
     private NoTriplo<T> raiz;
+
 
     public ABP() {
         this.raiz = null;
     }
 
+    @Override
     public NoTriplo<T> getRaiz() {
         return raiz;
     }
