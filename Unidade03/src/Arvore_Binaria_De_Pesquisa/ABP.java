@@ -1,7 +1,7 @@
 package Arvore_Binaria_De_Pesquisa;
 
 
-public class ABP<T extends Comparable<T>>implements Arborizavel<T> {
+public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     private NoTriplo<T> raiz;
 
@@ -141,5 +141,37 @@ public class ABP<T extends Comparable<T>>implements Arborizavel<T> {
         }
         return null;
     }
+
+
+    private String imprimirPreOrdemRec(NoTriplo<T> raizAtual) {
+        if (raizAtual == null) return "";   //caso base
+        return raizAtual.getDado() + " " +
+                imprimirPreOrdemRec(raizAtual.getEsquerda()) +  " " +
+                imprimirPreOrdemRec(raizAtual.getDireita());
+    }
+
+    private String imprimirEmOrdemRec(NoTriplo<T> raizAtual) {
+        if (raizAtual == null) return "";   //caso base
+        return imprimirEmOrdemRec(raizAtual.getEsquerda()) + " " +
+                raizAtual.getDado() + " " +
+                imprimirEmOrdemRec(raizAtual.getDireita());
+    }
+
+    @Override
+    public String imprimirPreOrdem() {
+        return formataSaida(imprimirPreOrdemRec(raiz));
+    }
+
+    @Override
+    public String imprimirEmOrdem() {
+        return formataSaida(imprimirEmOrdemRec(raiz));
+    }
+
+    private String formataSaida(String msg) {
+        // Substitui um ou mais espaços em branco por uma vírgula, após remover espaços das bordas
+        msg = msg.trim().replaceAll("\\s+", ",");
+        return "[" + msg + "]";
+    }
+
 
 }
