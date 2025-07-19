@@ -17,6 +17,5 @@ public interface Arborizavel<T> {
 
     String imprimirPosOrdem();
 
-    ;
 
 }

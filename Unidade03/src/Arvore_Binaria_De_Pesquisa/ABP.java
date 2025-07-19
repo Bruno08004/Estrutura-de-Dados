@@ -34,7 +34,6 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
                     }
                     noAuxiliar = noAuxiliar.getEsquerda();
                 } else {
-
                     if (noAuxiliar.getDireita() == null) {
                         noAuxiliar.setDireita(novoNo);
                         novoNo.setGenitor(noAuxiliar);
@@ -70,6 +69,16 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
 
     private void apagarNoFolha(NoTriplo<T> no) {
         NoTriplo<T> auxPai = no.getGenitor();
+        if (auxPai == null) {
+            raiz = null;
+        } else {
+            if (no.equals(auxPai.getEsquerda()))
+                //nodo é filho da esquerda
+                auxPai.setEsquerda(null);
+            else
+                //nodo é filho da direita
+                auxPai.setDireita(null);
+        }
 
     }
 
