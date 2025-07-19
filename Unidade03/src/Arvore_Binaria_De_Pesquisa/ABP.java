@@ -157,6 +157,16 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
                 imprimirEmOrdemRec(raizAtual.getDireita());
     }
 
+    private String imprimirPosOrdemRec(NoTriplo<T> raiz) {
+        String resultado = "";
+        if (raiz != null) {
+            resultado = imprimirPosOrdemRec(raiz.getEsquerda()) + " " +
+                    imprimirPosOrdemRec(raiz.getDireita()) +  " " +
+                    raiz.getDado();
+        }
+        return resultado;
+    }
+
     @Override
     public String imprimirPreOrdem() {
         return formataSaida(imprimirPreOrdemRec(raiz));
@@ -166,6 +176,12 @@ public class ABP<T extends Comparable<T>> implements Arborizavel<T> {
     public String imprimirEmOrdem() {
         return formataSaida(imprimirEmOrdemRec(raiz));
     }
+
+    @Override
+    public String imprimirPosOrdem() {
+        return formataSaida(imprimirPosOrdemRec(raiz));
+    }
+
 
     private String formataSaida(String msg) {
         // Substitui um ou mais espaços em branco por uma vírgula, após remover espaços das bordas
